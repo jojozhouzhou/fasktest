@@ -1,0 +1,5 @@
+DEBUG = False
+SQLALCHEMY_ECHO = True
+SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:zhousir_0301@127.0.0.1/ruandy?charset=utf8"
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_ENCODING = "utf-8"
