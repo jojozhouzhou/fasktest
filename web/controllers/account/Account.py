@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request,redirect
+from flask import Blueprint, request, redirect
 from common.libs.Herper import *
 from common.libs.Resourt import *
 from common.libs.UrlManage import UrlManage
@@ -34,11 +34,11 @@ def info():
     res = request.values
     # args可以精确去到get方法的所有参数
     args = request.args
-    if "id" not in args :
+    if "id" not in args:
         return redirect(UrlManage.buildUrl("/account/index"))
     id = args.get("id")
     user_info = User.query.filter_by(uid=id).first()
-    return ops_render("account/info.html",{"user_info":user_info})
+    return ops_render("account/info.html", {"user_info": user_info})
 
 
 @route_account.route("/set")
