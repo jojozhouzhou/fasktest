@@ -17,3 +17,9 @@ def success(msg="执行成功"):
     res["code"] = 200
     res["msg"] = msg
     return res
+
+def success(msg="执行成功",data={}):
+    res["code"] = 200
+    res["msg"] = msg
+    res["data"] = data
+    return res

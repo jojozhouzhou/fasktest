@@ -4,6 +4,7 @@ from flask import request, render_template, redirect, g
 from common.models.user import User
 from common.libs.user.UserService import UserService
 from common.libs.UrlManage import UrlManage
+from common.libs.log.LogService import LogService
 
 
 @app.before_request
@@ -44,6 +45,8 @@ def check_login():
         g.current_user = user_info
     except Exception as e:
         return False
+    # 记录操作人员操作日志
+    LogService.addAccessLog()
 
     if user_auth == user_cookie_auth:
         return True
